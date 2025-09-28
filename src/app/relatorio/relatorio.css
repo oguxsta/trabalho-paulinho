@@ -1,0 +1,161 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  padding: 12px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1100ff;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 54px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu li a:hover {
+  color: #2563eb;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-despesa {
+  background: #ef4444;
+}
+
+.btn-despesa:hover {
+  background: #dc2626;
+}
+
+.btn-receita {
+  background: #22c55e;
+}
+
+.btn-receita:hover {
+  background: #16a34a;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: rgba(144, 238, 144, 0.5);
+  border: 2px solid #10b981;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+.card.saldo {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #10b981;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.saldo.positivo {
+  background-color: rgba(144, 238, 144, 0.5);
+  border: 2px solid #10b981;
+}
+
+.card.saldo.negativo {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+}
+
+.card.saldo.neutro {
+  background: #f3f4f6;
+  border: 2px solid #d1d5db;
+}
+
+.valor.positivo {
+  color: #047857;
+  font-weight: bold;
+}
+.valor.negativo {
+  color: #b91c1c;
+  font-weight: bold;
+}
+.valor.neutro {
+  color: #374151;
+  font-weight: bold;
+}
+
+.valor {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 8px 0;
+  color: #111827;
+}

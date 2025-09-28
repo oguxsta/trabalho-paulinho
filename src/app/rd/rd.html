@@ -1,0 +1,74 @@
+<nav class="navbar">
+  <div class="logo"><span>Meu Orçamento</span> 📈</div>
+  <ul class="menu">
+    <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li><a [routerLink]="['/rd']">Receitas e Despesas</a></li>
+    <li><a [routerLink]="['/relatorio']">Relatórios</a></li>
+  </ul>
+  <div class="actions">
+    <a [routerLink]="['/despesas']" class="btn btn-despesa">+ Despesa</a>
+    <a [routerLink]="['/receitas']" class="btn btn-receita">+ Receita</a>
+  </div>
+</nav>
+<h1 class="title">Listas</h1>
+
+
+<div class="search-box">
+  <input
+    type="text"
+    placeholder="Filtrar por descrição..."
+    [(ngModel)]="filtro"
+  />
+</div>
+
+
+<div class="card">
+  <h1 class="receita-title">Receitas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>DESCRIÇÃO</th>
+        <th>VALOR</th>
+        <th>CATEGORIA</th>
+        <th>AÇÕES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of receitas">
+        <td>{{ r.descricao }}</td>
+        <td>R$ {{ r.valor | number:'1.2-2' }}</td>
+        <td>{{ r.categoria || '-' }}</td>
+        <td>
+          <span style="cursor: pointer;" (click)="editar(r)">📝</span>
+          <span style="cursor: pointer; margin-left: 8px;" (click)="excluir(r.id)">❌</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="card">
+  <h1 class="despesa-title">Despesas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>DESCRIÇÃO</th>
+        <th>VALOR</th>
+        <th>CATEGORIA</th>
+        <th>AÇÕES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of despesas">
+        <td>{{ d.descricao }}</td>
+        <td>R$ {{ d.valor | number:'1.2-2' }}</td>
+        <td>{{ d.categoria || '' }}</td>
+        <td>
+          <span style="cursor: pointer;" (click)="editar(d)">📝</span>
+          <span style="cursor: pointer; margin-left: 8px;" (click)="excluir(d.id)">❌</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

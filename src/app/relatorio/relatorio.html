@@ -1,0 +1,63 @@
+<nav class="navbar">
+  <div class="logo"><span>Meu Orçamento</span> 📈</div>
+  <ul class="menu">
+    <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li><a [routerLink]="['/rd']">Receitas e Despesas</a></li>
+    <li><a [routerLink]="['/relatorio']">Relatórios</a></li>
+  </ul>
+  <div class="actions">
+    <a [routerLink]="['/despesas']" class="btn btn-despesa">+ Despesa</a>
+    <a [routerLink]="['/receitas']" class="btn btn-receita">+ Receita</a>
+  </div>
+</nav>
+<br />
+<br />
+<br />
+
+<h2 class="title">Relatórios</h2>
+
+<!-- container que organiza os cards lado a lado -->
+<div class="cards-container">
+
+  <div
+    class="card saldo"
+    [ngClass]="{
+         'positivo': saldoMensal > 0, 
+         'negativo': saldoMensal < 0,
+         'neutro': saldoMensal === 0
+       }"
+  >
+    <h3>Saldo Mensal</h3>
+    <p
+      class="valor"
+      [ngClass]="{'positivo': saldoMensal > 0, 'negativo': saldoMensal < 0, 'neutro': saldoMensal === 0}"
+    >
+      {{ saldoMensal | number:'1.2-2' }} R$
+    </p>
+  </div>
+
+  <!-- Média de Despesas -->
+  <div class="card">
+    <h3>Média de Despesas</h3>
+    <p class="valor">{{ mediaDespesas | number:'1.2-2' }} R$</p>
+    <p *ngIf="mediaDespesas === 0">
+      Nenhuma despesa cadastrada para calcular a média.
+    </p>
+  </div>
+
+  <!-- Despesas por Categoria -->
+  <div class="card">
+    <h3>Despesas por Categoria (%)</h3>
+    <ng-container *ngIf="despesasPorCategoria.length > 0; else semCategoria">
+      <ul>
+        <li *ngFor="let cat of despesasPorCategoria">
+          {{ cat.categoria }} - {{ cat.percentual | number:'1.0-2' }}%
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #semCategoria>
+      <p>Nenhuma despesa cadastrada para exibir o percentual.</p>
+    </ng-template>
+  </div>
+
+</div>

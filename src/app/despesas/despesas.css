@@ -1,0 +1,145 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  padding: 12px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1100ff;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 54px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu li a:hover {
+  color: #2563eb;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-despesa {
+  background: #ef4444;
+}
+
+.btn-despesa:hover {
+  background: #dc2626;
+}
+
+.btn-receita {
+  background: #22c55e;
+}
+
+.btn-receita:hover {
+  background: #16a34a;
+}
+
+
+.card {
+  background-color: #fff;
+  padding: 50px 35px;
+  justify-content: center;
+  border-radius: 20px; 
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-5%);
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center; 
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3b82f6; 
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); 
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 16px; 
+  border-radius: 8px; 
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s; 
+}
+
+.btn.salvar {
+  background-color: #2563eb; 
+  color: white;
+}
+.btn.salvar:hover {
+  background-color: #1d4ed8;
+}
+
+.btn.cancelar {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+.btn.cancelar:hover {
+  background-color: #d1d5db;
+}

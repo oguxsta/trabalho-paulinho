@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <div class="logo"><span>Meu Orçamento</span> 📈</div>
+  <ul class="menu">
+    <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li><a [routerLink]="['/rd']">Receitas e Despesas</a></li>
+    <li><a [routerLink]="['/relatorio']">Relatórios</a></li>
+  </ul>
+  <div class="actions">
+    <a [routerLink]="['/despesas']" class="btn btn-despesa">+ Despesa</a>
+    <a [routerLink]="['/receitas']" class="btn btn-receita">+ Receita</a>
+  </div>
+</nav>
+<br />
+<br />
+<br />
+<div class="card">
+  <h2 class="title">Nova Despesa</h2>
+
+  <div class="form-group">
+    <label for="descricao">Descrição</label>
+    <input
+      type="text"
+      id="descricao"
+      [(ngModel)]="descricao"
+      placeholder="Ex: Salário, Aluguel"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="valor">Valor (R$)</label>
+    <input type="number" id="valor" [(ngModel)]="valor" step="0.01" />
+  </div>
+
+  <div class="form-group">
+    <label for="categoria">Categoria</label>
+    <select id="categoria" [(ngModel)]="categoria">
+      <option value="" disabled selected>Selecione uma categoria</option>
+      <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+    </select>
+
+    <div class="buttons">
+      <button class="btn salvar" (click)="salvarDespesa()">Salvar</button>
+      <button class="btn cancelar" (click)="cancelar()">Cancelar</button>
+    </div>
+  </div>
+</div>

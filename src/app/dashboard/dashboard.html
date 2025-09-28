@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="logo"><span>Meu Orçamento</span> 📈</div>
+  <ul class="menu">
+    <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li><a [routerLink]="['/rd']">Receitas e Despesas</a></li>
+    <li><a [routerLink]="['/relatorio']">Relatórios</a></li>
+  </ul>
+  <div class="actions">
+    <a [routerLink]="['/despesas']" class="btn btn-despesa">+ Despesa</a>
+    <a [routerLink]="['/receitas']" class="btn btn-receita">+ Receita</a>
+  </div>
+</nav>
+<li></li>
+<li></li>
+<div class="cards-container">
+  <div class="card receita">
+    <h3>Receita Total</h3>
+    <p class="valor">R$ {{ receitaTotal | number:'1.2-2' }}</p>
+  </div>
+
+  <div class="card despesa">
+    <h3>Despesa Total</h3>
+    <p class="valor">R$ {{ despesaTotal | number:'1.2-2' }}</p>
+  </div>
+
+  <div class="card saldo">
+    <h3>Saldo Final</h3>
+    <p class="valor">R$ {{ saldoFinal | number:'1.2-2' }}</p>
+  </div>
+</div>
